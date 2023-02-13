@@ -3,6 +3,7 @@
 namespace LoreSjoberg\Facets\Reflection;
 
 use JetBrains\PhpStorm\Immutable;
+use LoreSjoberg\Facets\FacetInterface;
 use ReflectionAttribute;
 use ReflectionClass;
 use ReflectionNamedType;
@@ -28,7 +29,7 @@ class DataTransferObjectProperty
     private ?Caster $caster;
 
     public function __construct(
-        DataTransferObject $dataTransferObject,
+        FacetInterface     $dataTransferObject,
         ReflectionProperty $reflectionProperty
     ) {
         $this->dataTransferObject = $dataTransferObject;

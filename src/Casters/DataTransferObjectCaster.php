@@ -4,6 +4,7 @@ namespace LoreSjoberg\Facets\Casters;
 
 use LoreSjoberg\Facets\Caster;
 use LoreSjoberg\Facets\DataTransferObject;
+use LoreSjoberg\Facets\FacetInterface;
 
 class DataTransferObjectCaster implements Caster
 {
@@ -12,7 +13,7 @@ class DataTransferObjectCaster implements Caster
     ) {
     }
 
-    public function cast(mixed $value): DataTransferObject
+    public function cast(mixed $value): FacetInterface
     {
         foreach ($this->classNames as $className) {
             if ($value instanceof $className) {

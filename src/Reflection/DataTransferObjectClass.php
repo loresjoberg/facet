@@ -2,6 +2,7 @@
 
 namespace LoreSjoberg\Facets\Reflection;
 
+use LoreSjoberg\Facets\FacetInterface;
 use ReflectionClass;
 use ReflectionProperty;
 use LoreSjoberg\Facets\Attributes\Strict;
@@ -16,7 +17,7 @@ class DataTransferObjectClass
 
     private bool $isStrict;
 
-    public function __construct(DataTransferObject $dataTransferObject)
+    public function __construct(FacetInterface $dataTransferObject)
     {
         $this->reflectionClass = new ReflectionClass($dataTransferObject);
         $this->dataTransferObject = $dataTransferObject;

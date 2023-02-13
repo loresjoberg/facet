@@ -12,7 +12,7 @@ use LoreSjoberg\Facets\Exceptions\UnknownProperties;
 use LoreSjoberg\Facets\Reflection\DataTransferObjectClass;
 
 #[CastWith(DataTransferObjectCaster::class)]
-abstract class DataTransferObject
+abstract class DataTransferObject implements FacetInterface
 {
     protected array $exceptKeys = [];
 
@@ -108,7 +108,7 @@ abstract class DataTransferObject
         return $data;
     }
 
-    public function only(string ...$keys): static
+    public function only(string ...$keys): FacetInterface
     {
         $dataTransferObject = clone $this;
 
@@ -117,7 +117,7 @@ abstract class DataTransferObject
         return $dataTransferObject;
     }
 
-    public function except(string ...$keys): static
+    public function except(string ...$keys): FacetInterface
     {
         $dataTransferObject = clone $this;
 
@@ -126,7 +126,7 @@ abstract class DataTransferObject
         return $dataTransferObject;
     }
 
-    public function clone(...$args): static
+    public function clone(...$args): FacetInterface
     {
         return new static(...array_merge($this->toArray(), $args));
     }

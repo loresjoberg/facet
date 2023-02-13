@@ -4,13 +4,14 @@ namespace LoreSjoberg\Facets\Exceptions;
 
 use Exception;
 use LoreSjoberg\Facets\DataTransferObject;
+use LoreSjoberg\Facets\FacetInterface;
 use LoreSjoberg\Facets\Validation\ValidationResult;
 
 class ValidationException extends Exception
 {
     public function __construct(
-        public DataTransferObject $dataTransferObject,
-        public array $validationErrors,
+        public FacetInterface $dataTransferObject,
+        public array          $validationErrors,
     ) {
         $className = $dataTransferObject::class;
 
