@@ -1,13 +1,13 @@
 <?php
 
-namespace Spatie\DataTransferObject\Attributes;
+namespace LoreSjoberg\Facets\Attributes;
 
 use Attribute;
 use JetBrains\PhpStorm\Immutable;
 use ReflectionNamedType;
 use ReflectionProperty;
 use ReflectionUnionType;
-use Spatie\DataTransferObject\Caster;
+use LoreSjoberg\Facets\Caster;
 
 #[Attribute(Attribute::TARGET_CLASS | Attribute::IS_REPEATABLE)]
 class DefaultCast
@@ -24,7 +24,7 @@ class DefaultCast
     {
         $type = $property->getType();
 
-        /** @var \ReflectionNamedType[]|null $types */
+        /** @var ReflectionNamedType[]|null $types */
         $types = match ($type::class) {
             ReflectionNamedType::class => [$type],
             ReflectionUnionType::class => $type->getTypes(),

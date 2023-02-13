@@ -1,8 +1,8 @@
 <?php
 
-namespace Spatie\DataTransferObject\Tests\Dummy;
+namespace LoreSjoberg\Facets\Tests\Dummy;
 
-use Spatie\DataTransferObject\Caster;
+use LoreSjoberg\Facets\Caster;
 
 class RoundingCaster implements Caster
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Spatie\DataTransferObject\Tests;
+namespace LoreSjoberg\Facets\Tests;
 
-use Spatie\DataTransferObject\Attributes\MapFrom;
-use Spatie\DataTransferObject\DataTransferObject;
+use LoreSjoberg\Facets\Attributes\MapFrom;
+use LoreSjoberg\Facets\DataTransferObject;
 
 class MapFromTest extends TestCase
 {

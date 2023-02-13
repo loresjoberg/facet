@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\DataTransferObject\Tests\Stubs;
+namespace LoreSjoberg\Facets\Tests\Stubs;
 
 enum IntegerEnum: int
 {

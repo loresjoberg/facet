@@ -1,9 +1,10 @@
 <?php
 
-namespace Spatie\DataTransferObject\Casters;
+namespace LoreSjoberg\Facets\Casters;
 
+use BackedEnum;
 use LogicException;
-use Spatie\DataTransferObject\Caster;
+use LoreSjoberg\Facets\Caster;
 
 class EnumCaster implements Caster
 {
@@ -13,7 +14,7 @@ class EnumCaster implements Caster
     ) {
     }
 
-    public function cast(mixed $value): mixed
+    public function cast(mixed $value): BackedEnum
     {
         if ($value instanceof $this->enumType) {
             return $value;

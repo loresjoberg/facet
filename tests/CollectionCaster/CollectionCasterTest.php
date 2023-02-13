@@ -1,12 +1,12 @@
 <?php
 
-namespace Spatie\DataTransferObject\Tests\CollectionCaster;
+namespace LoreSjoberg\Facets\Tests\CollectionCaster;
 
 use Illuminate\Support\Collection;
-use Spatie\DataTransferObject\Attributes\CastWith;
-use Spatie\DataTransferObject\Caster;
-use Spatie\DataTransferObject\DataTransferObject;
-use Spatie\DataTransferObject\Tests\TestCase;
+use LoreSjoberg\Facets\Attributes\CastWith;
+use LoreSjoberg\Facets\Caster;
+use LoreSjoberg\Facets\DataTransferObject;
+use LoreSjoberg\Facets\Tests\TestCase;
 
 class CollectionCasterTest extends TestCase
 {

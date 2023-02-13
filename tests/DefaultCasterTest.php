@@ -1,12 +1,12 @@
 <?php
 
-namespace Spatie\DataTransferObject\Tests;
+namespace LoreSjoberg\Facets\Tests;
 
 use Attribute;
 use DateTimeImmutable;
-use Spatie\DataTransferObject\Attributes\DefaultCast;
-use Spatie\DataTransferObject\Caster;
-use Spatie\DataTransferObject\DataTransferObject;
+use LoreSjoberg\Facets\Attributes\DefaultCast;
+use LoreSjoberg\Facets\Caster;
+use LoreSjoberg\Facets\DataTransferObject;
 
 class DefaultCasterTest extends TestCase
 {

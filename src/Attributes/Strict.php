@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\DataTransferObject\Attributes;
+namespace LoreSjoberg\Facets\Attributes;
 
 use Attribute;
 

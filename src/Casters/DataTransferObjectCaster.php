@@ -1,9 +1,9 @@
 <?php
 
-namespace Spatie\DataTransferObject\Casters;
+namespace LoreSjoberg\Facets\Casters;
 
-use Spatie\DataTransferObject\Caster;
-use Spatie\DataTransferObject\DataTransferObject;
+use LoreSjoberg\Facets\Caster;
+use LoreSjoberg\Facets\DataTransferObject;
 
 class DataTransferObjectCaster implements Caster
 {

@@ -1,14 +1,14 @@
 <?php
 
-namespace Spatie\DataTransferObject;
+namespace LoreSjoberg\Facets;
 
 use ReflectionClass;
 use ReflectionProperty;
-use Spatie\DataTransferObject\Attributes\CastWith;
-use Spatie\DataTransferObject\Attributes\MapTo;
-use Spatie\DataTransferObject\Casters\DataTransferObjectCaster;
-use Spatie\DataTransferObject\Exceptions\UnknownProperties;
-use Spatie\DataTransferObject\Reflection\DataTransferObjectClass;
+use LoreSjoberg\Facets\Attributes\CastWith;
+use LoreSjoberg\Facets\Attributes\MapTo;
+use LoreSjoberg\Facets\Casters\DataTransferObjectCaster;
+use LoreSjoberg\Facets\Exceptions\UnknownProperties;
+use LoreSjoberg\Facets\Reflection\DataTransferObjectClass;
 
 #[CastWith(DataTransferObjectCaster::class)]
 abstract class DataTransferObject
@@ -99,9 +99,7 @@ abstract class DataTransferObject
             $array = Arr::except($this->all(), $this->exceptKeys);
         }
 
-        $array = $this->parseArray($array);
-
-        return $array;
+        return $this->parseArray($array);
     }
 
     protected function parseArray(array $array): array

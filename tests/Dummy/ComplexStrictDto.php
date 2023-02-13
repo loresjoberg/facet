@@ -1,9 +1,9 @@
 <?php
 
-namespace Spatie\DataTransferObject\Tests\Dummy;
+namespace LoreSjoberg\Facets\Tests\Dummy;
 
-use Spatie\DataTransferObject\Attributes\Strict;
-use Spatie\DataTransferObject\DataTransferObject;
+use LoreSjoberg\Facets\Attributes\Strict;
+use LoreSjoberg\Facets\DataTransferObject;
 
 #[Strict]
 class ComplexStrictDto extends DataTransferObject

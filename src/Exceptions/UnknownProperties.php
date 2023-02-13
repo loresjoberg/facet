@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\DataTransferObject\Exceptions;
+namespace LoreSjoberg\Facets\Exceptions;
 
 use Exception;
 
@@ -10,6 +10,6 @@ class UnknownProperties extends Exception
     {
         $properties = json_encode($fields);
 
-        return new self("Unknown properties provided to `{$dtoClass}`: {$properties}");
+        return new self("Unknown properties provided to `$dtoClass`: $properties");
     }
 }

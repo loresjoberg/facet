@@ -1,12 +1,12 @@
 <?php
 
-namespace Spatie\DataTransferObject\Tests\Casters;
+namespace LoreSjoberg\Facets\Tests\Casters;
 
 use Exception;
-use Spatie\DataTransferObject\Attributes\CastWith;
-use Spatie\DataTransferObject\Caster;
-use Spatie\DataTransferObject\DataTransferObject;
-use Spatie\DataTransferObject\Tests\TestCase;
+use LoreSjoberg\Facets\Attributes\CastWith;
+use LoreSjoberg\Facets\Caster;
+use LoreSjoberg\Facets\DataTransferObject;
+use LoreSjoberg\Facets\Tests\TestCase;
 
 class ArrayCasterTest extends TestCase
 {
@@ -27,7 +27,7 @@ class ArrayCasterTest extends TestCase
 
 class Bar extends DataTransferObject
 {
-    /** @var \Spatie\DataTransferObject\Tests\Foo[] */
+    /** @var \LoreSjoberg\Facets\Tests\Foo[] */
     #[CastWith(FooArrayCaster::class)]
     public array $collectionOfFoo;
 }

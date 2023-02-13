@@ -1,8 +1,8 @@
 <?php
 
-namespace Spatie\DataTransferObject\Tests\Dummy;
+namespace LoreSjoberg\Facets\Tests\Dummy;
 
-use Spatie\DataTransferObject\DataTransferObject;
+use LoreSjoberg\Facets\DataTransferObject;
 
 class ComplexDto extends DataTransferObject
 {

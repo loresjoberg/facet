@@ -34,8 +34,8 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 The goal of this package is to make constructing objects from arrays of (serialized) data as easy as possible. Here's what a DTO looks like:
 
 ```php
-use Spatie\DataTransferObject\Attributes\MapFrom;
-use Spatie\DataTransferObject\DataTransferObject;
+use LoreSjoberg\Facets\Attributes\MapFrom;
+use LoreSjoberg\Facets\DataTransferObject;
 
 class MyDTO extends DataTransferObject
 {
@@ -131,7 +131,7 @@ class ComplexObject
 And its caster `ComplexObjectCaster`:
 
 ```php
-use Spatie\DataTransferObject\Caster;
+use LoreSjoberg\Facets\Caster;
 
 class ComplexObjectCaster implements Caster
 {
@@ -194,11 +194,11 @@ Using named arguments when passing input to your caster will help make your code
 For example:
 
 ```php
-    /** @var \Spatie\DataTransferObject\Tests\Foo[] */
+    /** @var \LoreSjoberg\Facets\Tests\Foo[] */
     #[CastWith(ArrayCaster::class, itemType: Foo::class)]
     public array $collectionWithNamedArguments;
     
-    /** @var \Spatie\DataTransferObject\Tests\Foo[] */
+    /** @var \LoreSjoberg\Facets\Tests\Foo[] */
     #[CastWith(ArrayCaster::class, Foo::class)]
     public array $collectionWithoutNamedArguments;
 ```
@@ -324,7 +324,7 @@ new NonStrictDto(
 ```
 
 ```php
-use \Spatie\DataTransferObject\Attributes\Strict;
+use LoreSjoberg\Facets\Attributes\Strict;
 
 #[Strict]
 class StrictDto extends DataTransferObject
@@ -387,7 +387,7 @@ Here's an example of casting a collection of DTOs to an array of DTOs:
 ```php
 class Bar extends DataTransferObject
 {
-    /** @var \Spatie\DataTransferObject\Tests\Foo[] */
+    /** @var \LoreSjoberg\Facets\Tests\Foo[] */
     #[CastWith(FooArrayCaster::class)]
     public array $collectionOfFoo;
 }
@@ -463,7 +463,7 @@ For a simple array of DTOs, or an object that implements PHP's built-in `ArrayAc
 ```php
 class Bar extends DataTransferObject
 {
-    /** @var \Spatie\DataTransferObject\Tests\Foo[] */
+    /** @var \LoreSjoberg\Facets\Tests\Foo[] */
     #[CastWith(ArrayCaster::class, itemType: Foo::class)]
     public array $collectionOfFoo;
 }

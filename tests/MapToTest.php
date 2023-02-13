@@ -1,11 +1,11 @@
 <?php
 
-namespace Spatie\DataTransferObject\Tests;
+namespace LoreSjoberg\Facets\Tests;
 
-use Spatie\DataTransferObject\Arr;
-use Spatie\DataTransferObject\Attributes\MapFrom;
-use Spatie\DataTransferObject\Attributes\MapTo;
-use Spatie\DataTransferObject\DataTransferObject;
+use LoreSjoberg\Facets\Arr;
+use LoreSjoberg\Facets\Attributes\MapFrom;
+use LoreSjoberg\Facets\Attributes\MapTo;
+use LoreSjoberg\Facets\DataTransferObject;
 
 class MapToTest extends TestCase
 {

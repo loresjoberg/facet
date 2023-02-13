@@ -1,10 +1,10 @@
 <?php
 
-namespace Spatie\DataTransferObject\Casters;
+namespace LoreSjoberg\Facets\Casters;
 
 use ArrayAccess;
 use LogicException;
-use Spatie\DataTransferObject\Caster;
+use LoreSjoberg\Facets\Caster;
 use Traversable;
 
 class ArrayCaster implements Caster
@@ -64,7 +64,7 @@ class ArrayCaster implements Caster
         }
 
         throw new LogicException(
-            "Caster [ArrayCaster] each item must be an array or an instance of the specified item type [{$this->itemType}]."
+            "Caster [ArrayCaster] each item must be an array or an instance of the specified item type [$this->itemType]."
         );
     }
 }

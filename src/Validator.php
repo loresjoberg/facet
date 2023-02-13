@@ -1,8 +1,8 @@
 <?php
 
-namespace Spatie\DataTransferObject;
+namespace LoreSjoberg\Facets;
 
-use Spatie\DataTransferObject\Validation\ValidationResult;
+use LoreSjoberg\Facets\Validation\ValidationResult;
 
 interface Validator
 {
