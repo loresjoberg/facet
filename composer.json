@@ -1,11 +1,12 @@
 {
-    "name": "spatie/data-transfer-object",
-    "description": "Data transfer objects with batteries included",
+    "name": "loresjoberg/facet",
+    "description": "Simple extensible data transfer object",
     "keywords": [
-        "spatie",
-        "data-transfer-object"
+        "loresjoberg",
+        "data-transfer-object",
+        "facet"
     ],
-    "homepage": "https://github.com/spatie/data-transfer-object",
+    "homepage": "https://github.com/loresjoberg/facet",
     "license": "MIT",
     "authors": [
         {
@@ -26,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\DataTransferObject\\": "src"
+            "LoreSjoberg\\Facets\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\DataTransferObject\\Tests\\": "tests"
+            "LoreSjoberg\\Facets\\Tests\\": "tests"
         }
     },
     "scripts": {
