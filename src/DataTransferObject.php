@@ -2,6 +2,7 @@
 
 namespace LoreSjoberg\Facets;
 
+use LoreSjoberg\Facets\Exceptions\ValidationException;
 use ReflectionClass;
 use ReflectionProperty;
 use LoreSjoberg\Facets\Attributes\CastWith;
@@ -17,26 +18,65 @@ abstract class DataTransferObject
 
     protected array $onlyKeys = [];
 
-    public function __construct(...$args)
-    {
+    /**
+     * @throws UnknownProperties
+     * @throws ValidationException
+     */
+    public function __construct(...$args) {
+
         if (is_array($args[0] ?? null)) {
             $args = $args[0];
         }
 
+        $args['root'] = &$args;
+
+        $args = $this->preProcess($args);
+
+        $trackedArgs = $args;
         $class = new DataTransferObjectClass($this);
 
         foreach ($class->getProperties() as $property) {
             $property->setValue(Arr::get($args, $property->name, $property->getDefaultValue()));
-
-            $args = Arr::forget($args, $property->name);
+            $trackedArgs = Arr::forget($trackedArgs, $property->name);
         }
 
-        if ($class->isStrict() && count($args)) {
-            throw UnknownProperties::new(static::class, array_keys($args));
-        }
+        $this->checkForStrict($class, $trackedArgs);
 
         $class->validate();
     }
+
+    public function toJson(): string
+    {
+        return $this->jsonEncode($this->toArray());
+    }
+
+    protected  function jsonEncode(mixed $value, $addedFlags = ''): bool|string
+    {
+        $flags = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR;
+
+        if ($addedFlags) {
+            $flags = $flags | $addedFlags;
+        }
+
+        return json_encode($value, $flags);
+    }
+
+    protected function preProcess(array $input): array
+    {
+        return $input;
+    }
+
+    /**
+     * @throws UnknownProperties
+     * @codeCoverageIgnore
+     */
+    protected function checkForStrict(DataTransferObjectClass $class, array $trackedArgs): void
+    {
+        if ($class->isStrict() && count($trackedArgs)) {
+            throw UnknownProperties::new(static::class, array_keys($trackedArgs));
+        }
+    }
+
 
     public static function arrayOf(array $arrayOfParameters): array
     {
